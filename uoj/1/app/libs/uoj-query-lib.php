@@ -10,6 +10,8 @@ function hasProblemPermission($user, $problem) {
     return DB::selectFirst("select * from problems_permissions where username = '{$user['username']}' and problem_id = {$problem['id']}") != null;
 }
 function hasViewPermission($str,$user,$problem,$submission) {
+    if(isSuperUser($user))
+        return true;
     if($str=='ALL')
         return true;
     if($str=='ALL_AFTER_AC')
