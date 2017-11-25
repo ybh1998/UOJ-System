@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER MascoSkray <MascoSkray@gmail.com>
 
 #Update apt and install git
-RUN apt-get update -y && apt-get install -y git
+RUN apt-get update -y && apt-get install -y nano git
 #Clone the latest UOJ Community verison to local
 RUN cd ~ && git clone https://github.com/ybh1998/UOJ-System.git
 #Install environment and set startup script

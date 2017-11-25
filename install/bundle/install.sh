@@ -156,6 +156,8 @@ setWebConf(){
 	#Set webroot path
 	ln -s /var/svn/uoj/cur/uoj/1 /var/www/uoj
 	chown www-data /var/www/uoj/app/storage -R
+	mkdir -p /var/www/uoj/files/upload/
+    chown www-data /var/www/uoj/files/upload/ -R
 	#Set web config file
 	php -a <<UOJEOF
 \$config = include '/var/www/uoj/app/.default-config.php';
