@@ -26,6 +26,7 @@ $path = call_user_func(function() {
     return $path;
 });
 if(Auth::check() ||
+    substr($path, 0, 6) == "/judge" ||
 	$path == "/login.php" ||
 	$path == "/register.php") {
 		include UOJContext::documentRoot().'/app/controllers'.$path;
