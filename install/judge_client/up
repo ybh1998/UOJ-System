@@ -1,6 +1,8 @@
 #!/bin/sh
 
 service ntp start
+mkdir -p /var/www/uoj/files/upload
+chown www-data /var/www/uoj/files/upload
 
 su judger -c '~/judge_client/judge_client start'
 
